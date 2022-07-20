@@ -42,7 +42,7 @@ Citation
 ----------
 If your find our paper or codes useful, please cite our work:
 
-    @inproceedings{jiang2022avatarformer,
+    @inproceedings{jiang2022avatarposer,
       title={AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing},
       author={Jiang, Jiaxi and Streli, Paul and Qiu, Huajian and Fender, Andreas and Laich, Larissa and Snape, Patrick and Holz, Christian},
       booktitle={Proceedings of European Conference on Computer Vision},
