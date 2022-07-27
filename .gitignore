@@ -1,0 +1,5 @@
+support_data/body_models
+results
+*.pkl
+*fps60
+**/__pycache__
