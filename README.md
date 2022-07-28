@@ -5,6 +5,12 @@
 <sup>1</sup> [Sensing, Interaction & Perception Lab](https://siplab.org), Department of Computer Science, ETH Zürich, Switzerland <br/>
 <sup>2</sup> Reality Labs at Meta, Zurich, Switzerland <br/>
 
+
+![framework](https://github.com/eth-siplab/AvatarPoser/tree/master/figs/framework.jpg)
+
+![real_vr](https://github.com/eth-siplab/AvatarPoser/tree/master/figs/real_vr.jpg)
+
+
 ___________
 
 Contents
