@@ -11,8 +11,8 @@ Overview
 ----------
 
 <p align="center">
-<img src="figs/framework.jpg" width="500">
-<img src="figs/real_vr.jpg" width="420">
+<img src="figs/framework.jpg" width="400">
+<img src="figs/real_vr.jpg" width="360">
 </p>
 
 
