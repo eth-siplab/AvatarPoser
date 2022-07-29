@@ -13,7 +13,6 @@ Overview
 ----------
 
 <p align="center">
-<img src="figs/framework.jpg" width="600">
 <img src="figs/teaser.gif" width="600">
 </p>
 
