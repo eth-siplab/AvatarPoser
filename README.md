@@ -49,7 +49,7 @@ python main_test_avatarposer.py
 ```
 Pretrained Models
 ----------
-Click [Pretrained Models]() to download our pretrained models for AvatarPoser.
+Click [Pretrained Models](https://github.com/eth-siplab/AvatarPoser/releases/download/v1.0/avatarposer.pth) to download our pretrained model for AvatarPoser, and put it into `model_zoo`.
 
 Citation
 ----------
