@@ -4,6 +4,8 @@
 
 <sup>1</sup> [Sensing, Interaction & Perception Lab](https://siplab.org), Department of Computer Science, ETH Zürich, Switzerland <br/>
 <sup>2</sup> Reality Labs at Meta, Zurich, Switzerland <br/>
+<p align="center">
+</p>
 
 ___________
 
@@ -11,8 +13,8 @@ Overview
 ----------
 
 <p align="center">
-<img src="figs/framework.jpg" width="400">
-<img src="figs/real_vr.jpg" width="360">
+<img src="figs/framework.jpg" width="600">
+<img src="figs/teaser.gif" width="600">
 </p>
 
 
