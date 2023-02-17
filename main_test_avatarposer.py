@@ -106,7 +106,6 @@ def main(json_path='options/test_avatarposer.json'):
 
     model.init_test()
 
-    rot_error = []
     pos_error = []
     vel_error = []
     pos_error_hands = []
@@ -150,7 +149,6 @@ def main(json_path='options/test_avatarposer.json'):
         gt_angle = gt_angle.reshape(body_parms_gt['pose_body'].shape[0],-1,3)
 
 
-        rot_error_ = torch.mean(torch.absolute(gt_angle-predicted_angle))
         pos_error_ = torch.mean(torch.sqrt(torch.sum(torch.square(gt_position-predicted_position),axis=-1)))
         pos_error_hands_ = torch.mean(torch.sqrt(torch.sum(torch.square(gt_position-predicted_position),axis=-1))[...,[20,21]])
 
@@ -158,7 +156,6 @@ def main(json_path='options/test_avatarposer.json'):
         predicted_velocity = (predicted_position[1:,...] - predicted_position[:-1,...])*60
         vel_error_ = torch.mean(torch.sqrt(torch.sum(torch.square(gt_velocity-predicted_velocity),axis=-1)))
 
-        rot_error.append(rot_error_)
         pos_error.append(pos_error_)
         vel_error.append(vel_error_)
 
@@ -166,14 +163,13 @@ def main(json_path='options/test_avatarposer.json'):
 
 
 
-    rot_error = sum(rot_error)/len(rot_error)
     pos_error = sum(pos_error)/len(pos_error)
     vel_error = sum(vel_error)/len(vel_error)
     pos_error_hands = sum(pos_error_hands)/len(pos_error_hands)
 
 
     # testing log
-    logger.info('Average rotational error [degree]: {:<.5f}, Average positional error [cm]: {:<.5f}, Average velocity error [cm/s]: {:<.5f}, Average positional error at hand [cm]: {:<.5f}\n'.format(rot_error*57.2958, pos_error*100, vel_error*100, pos_error_hands*100))
+    logger.info('Average positional error [cm]: {:<.5f}, Average velocity error [cm/s]: {:<.5f}, Average positional error at hand [cm]: {:<.5f}\n'.format(pos_error*100, vel_error*100, pos_error_hands*100))
 
 
 if __name__ == '__main__':
