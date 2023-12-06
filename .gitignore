@@ -3,3 +3,7 @@ results
 *.pkl
 *fps60
 **/__pycache__
+data_split
+data_fps60
+mesh-fix-MSVC_comilation
+BioMotionLab_NTroje
