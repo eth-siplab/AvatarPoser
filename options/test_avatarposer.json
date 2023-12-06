@@ -15,7 +15,7 @@
       "train": {
         "name": "train_dataset"           // just name
         , "dataset_type": "amass"         // "amass" 
-        , "dataroot": "./data_cameraready_fps60"// path of training dataset
+        , "dataroot": "./data_fps60"// path of training dataset
   
         , "dataloader_shuffle": true
         , "dataloader_num_workers": 16
@@ -27,7 +27,7 @@
        "test": {
         "name": "test_dataset"            // just name
         , "dataset_type": "amass"         // "amass" 
-        , "dataroot": "./data_cameraready_fps60"  // path of testing dataset
+        , "dataroot": "./data_fps60"  // path of testing dataset
         , "dataloader_batch_size": 1     // batch size 1 | 16 | 32 | 48 | 64 | 128
         , "num_input": 3                  // number of tracking devices  3 | 4
         , "window_size": 40
