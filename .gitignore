@@ -11,3 +11,11 @@ CMU
 MPI_HDM05
 Zjail
 mesh-fix-MSVC_compilation.zip
+PyOpenGL-3.1.0.win32.exe
+PyOpenGL-3.1.6-cp37-cp37m-win32.whl
+PyOpenGL-3.1.6-cp37-cp37m-win_amd64.whl
+PyOpenGL-3.1.7-py3-none-any.whl
+PyOpenGL_accelerate-3.1.6-cp37-cp37m-win32.whl
+torch-1.12.1+cu113-cp37-cp37m-win_amd64.whl
+torchaudio-0.12.1+cu113-cp37-cp37m-win_amd64.whl
+torchvision-0.13.1+cu113-cp37-cp37m-win_amd64.whl
