@@ -1,0 +1,9 @@
+{
+    "ip_port": ["127.0.0.1",8000],
+
+    "AddressFamily" : ["ipv4","ipv6"],
+    "socket_AddressFamily": 0,
+
+    "SocketType" : ["tcp","udp","tcp/ip"],
+    "socket_Type" : 0
+}

@@ -86,7 +86,7 @@ def main(json_path='options/test_avatarposer.json'):
             test_set = define_Dataset(dataset_opt)
             test_loader = DataLoader(test_set, batch_size=dataset_opt['dataloader_batch_size'],
                                      shuffle=False, num_workers=1,
-                                     drop_last=False, pin_memory=True)
+                                     drop_last=False, pin_memory=False)
         elif phase == 'train':
             continue
         else:
