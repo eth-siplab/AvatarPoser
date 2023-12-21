@@ -1,15 +1,12 @@
 from collections.abc import Callable, Iterable, Mapping
 import os
 from typing import Any
-import torch
 import numpy as np
-import pickle
 import socket
 from threading import Thread
 import json
 import time
 
-###################################   Method
 
 def initOption(options) -> dict:
     opt = options
@@ -31,7 +28,7 @@ def initOption(options) -> dict:
         print("No matach socket type")
 
     return opt
-
+    
 def save_npz2json(filepath,outpath=".\\results\\json")->None:
     data={}
 
@@ -89,7 +86,6 @@ def save_pkl2json(filepath,outpath=".\\results\\json")->None:
     #print("{0}{1}".format("save to : ",save_file_path))
     return
 
-####################################  Class
 class CMD(Thread):
     def __init__(self,group) -> None:
         super().__init__()
@@ -118,6 +114,7 @@ class CMD(Thread):
                     elif cmd_list[2] =="send":
                         self.group[1].send(cmd_list[3])
         return super().run()
+
 
 
 class ServerSK(Thread):
@@ -171,6 +168,8 @@ class ServerSK(Thread):
         self.message = message
 
 
+
+
 class ClientSK(Thread):
     def __init__(self):
         super().__init__()
@@ -213,24 +212,39 @@ class ClientSK(Thread):
 
     def send(self,message):
         self.message = message
-   
-####################################   Main    
+    
+    
+    
+
+
 def main():
-    # ############################### ---服务器配置流程
-    # Server = ServerSK()
-    # Client = ClientSK()
-    # cmdm = CMD([Server,Client])
-    # # 启动CMD线程
-    # cmdm.start()
+    Server = ServerSK()
+    Client = ClientSK()
+    cmdm = CMD([Server,Client])
+    # 启动CMD线程
+    cmdm.start()
 
-    # #启动ServerSK和ClientSK线程
-    # cmdm.group[0].start()
-    # cmdm.group[1].start()
+    #启动ServerSK和ClientSK线程
+    cmdm.group[0].start()
+    cmdm.group[1].start()
 
-    # # 发送消息
-    # cmdm.group[0].send("1111111111")
-    # time.sleep(1)
-    # cmdm.group[1].send("2222222222")
+    # 发送消息
+    cmdm.group[0].send("1111111111")
+    
+    time.sleep(1)
+    
+    cmdm.group[1].send("2222222222")
+
+    # 等待线程执行完毕
+    # cmdm.join()
+    # cmdm.group[0].join()
+    # cmdm.group[1].join()
+
+    # Server.start()
+    # Client.start()
+
+    # Server.send("111111111111")
+    # Client.send('2222222222222')
 
     ################################-----pkl数据文件读写测试
     # testfilepath = os.path.join("data_fps60","CMU","test","1.pkl")
@@ -239,6 +253,7 @@ def main():
     ################################------npz数据文件读写测试
     testfilepath = os.path.join("data_split","CMU","01","01_01_poses.npz")
     save_npz2json(testfilepath)
+    
     return
 
 if __name__ == '__main__':
