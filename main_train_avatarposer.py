@@ -192,7 +192,7 @@ def main(json_path='options/train_avatarposer.json'):
                 for index, test_data in enumerate(test_loader):
                     logger.info("testing the sample {}/{}".format(index, len(test_loader)))
 
-                    model.feed_data(test_data, test=True)
+                    model.feed_data(test_data, test=False)
 
                     model.test()
 
