@@ -237,8 +237,8 @@ def main():
     # save_pkl2json(testfilepath)
 
     ################################------npz数据文件读写测试
-    # testfilepath = os.path.join("data_split","CMU","01","01_01_poses.npz")
-    # save_npz2json(testfilepath)
+    testfilepath = os.path.join("data_split","CMU","01","01_01_poses.npz")
+    save_npz2json(testfilepath)
     return
 
 if __name__ == '__main__':

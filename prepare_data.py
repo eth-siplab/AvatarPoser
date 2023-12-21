@@ -104,7 +104,7 @@ for dataroot_subset in ["MPI_HDM05", "BioMotionLab_NTroje", "CMU"]:
             rotation_global_matrot = local2global_pose(rotation_local_matrot, bm.kintree_table[0].long()) # rotation of joints relative to the origin
 
             head_rotation_global_matrot = rotation_global_matrot[:,[15],:,:]
-            #
+
             rotation_global_6d = utils_transform.matrot2sixd(rotation_global_matrot.reshape(-1,3,3)).reshape(rotation_global_matrot.shape[0],-1,6)
             input_rotation_global_6d = rotation_global_6d[1:,[15,20,21],:]
 
@@ -112,7 +112,6 @@ for dataroot_subset in ["MPI_HDM05", "BioMotionLab_NTroje", "CMU"]:
             rotation_velocity_global_6d = utils_transform.matrot2sixd(rotation_velocity_global_matrot.reshape(-1,3,3)).reshape(rotation_velocity_global_matrot.shape[0],-1,6)
             input_rotation_velocity_global_6d = rotation_velocity_global_6d[:,[15,20,21],:]
 
-            #
             position_global_full_gt_world = body_pose_world.Jtr[:,:22,:] # position of joints relative to the world origin
 
             position_head_world = position_global_full_gt_world[:,15,:] # world position of head
@@ -120,11 +119,13 @@ for dataroot_subset in ["MPI_HDM05", "BioMotionLab_NTroje", "CMU"]:
             head_global_trans = torch.eye(4).repeat(position_head_world.shape[0],1,1)
             head_global_trans[:,:3,:3] = head_rotation_global_matrot.squeeze()
             head_global_trans[:,:3,3] = position_global_full_gt_world[:,15,:]
+
+        #            embed()
             head_global_trans_list = head_global_trans[1:]
 
 
 
-            
+
             num_frames = position_global_full_gt_world.shape[0]-1
 
 

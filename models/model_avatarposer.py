@@ -149,8 +149,8 @@ class ModelAvatarPoser(ModelBase):
         self.L = data['L'].to(self.device)
         self.P = data['P']
         self.Head_trans_global = data['Head_trans_global'].to(self.device)
-        self.H_global_orientation = data['H'][:,:6].to(self.device)
-        self.H_joint_rotation = data['H'][:,6:].to(self.device)
+        self.H_global_orientation = data['H'].squeeze()[:,:6].to(self.device)
+        self.H_joint_rotation = data['H'].squeeze()[:,6:].to(self.device)
 #        self.H = torch.cat([self.H_global_orientation, self.H_joint_rotation],dim=-1).to(self.device)
         self.H_joint_position = self.netG.module.fk_module(self.H_global_orientation, self.H_joint_rotation , self.bm)
 
