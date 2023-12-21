@@ -103,7 +103,7 @@ def main(json_path='options/train_avatarposer.json'):
                                       shuffle=dataset_opt['dataloader_shuffle'],
                                       num_workers=dataset_opt['dataloader_num_workers'],
                                       drop_last=True,
-                                      pin_memory=True)
+                                      pin_memory=False)
         elif phase == 'test':
             test_set = define_Dataset(dataset_opt)
             test_loader = DataLoader(test_set, batch_size=dataset_opt['dataloader_batch_size'],

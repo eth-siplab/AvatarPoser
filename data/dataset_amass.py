@@ -53,6 +53,7 @@ class AMASS_Dataset(Dataset):
             data = pickle.load(f)
 
         if self.opt['phase'] == 'train':
+            #当文件长度小于窗口大小的时候，随机加载之前的文件
             while data['rotation_local_full_gt_list'].shape[0] <self.window_size:
                 idx = random.randint(0,idx)
                 filename = self.filename_list[idx]
@@ -66,21 +67,21 @@ class AMASS_Dataset(Dataset):
         head_global_trans_list = data['head_global_trans_list']
 
 
-        if self.opt['phase'] == 'train':
-            
-            frame = np.random.randint(hmd_position_global_full_gt_list.shape[0] - self.window_size + 1 - 1)
-            input_hmd  = hmd_position_global_full_gt_list[frame:frame + self.window_size+1,...].reshape(self.window_size+1, -1).float()
-            output_gt = rotation_local_full_gt_list[frame + self.window_size - 1 : frame + self.window_size - 1 + 1,...].float()
+        if self.opt['phase'] == 'train':  # train
+            #训练时   随机截取一段
+            frame = np.random.randint(hmd_position_global_full_gt_list.shape[0] - self.window_size)
+            input_hmd  = hmd_position_global_full_gt_list[frame:frame + self.window_size+1,...].reshape(self.window_size+1, -1)
+            output_gt = rotation_local_full_gt_list[frame : frame + self.window_size + 1,...]
 
-            return {'L': input_hmd,
-                    'H': output_gt,
+            return {'L': input_hmd.float(),
+                    'H': output_gt.float(),
                     'P': 1,
                     'Head_trans_global':head_global_trans_list[frame + self.window_size - 1:frame + self.window_size - 1+1,...],
                     'pos_pelvis_gt':body_parms_list['trans'][frame + self.window_size - 1:frame + self.window_size - 1+1,...],
                     'vel_pelvis_gt':body_parms_list['trans'][frame + self.window_size - 1:frame + self.window_size - 1+1,...]-body_parms_list['trans'][frame + self.window_size - 2:frame + self.window_size - 2+1,...]
                     }
 
-        else:
+        else: #  test
 
             input_hmd  = hmd_position_global_full_gt_list.reshape(hmd_position_global_full_gt_list.shape[0], -1)[1:]
             output_gt = rotation_local_full_gt_list[1:]
