@@ -1,3 +1,14 @@
+'''
+# --------------------------------------------
+# main training code
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
+
 import os.path
 import math
 import argparse
@@ -14,7 +25,6 @@ from models.select_model import define_Model
 from utils import utils_transform
 import pickle
 from utils import utils_visualize as vis
-
 
 save_animation = False
 resolution = (800,800)

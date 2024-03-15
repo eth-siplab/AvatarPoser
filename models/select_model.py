@@ -1,15 +1,19 @@
+'''
+# --------------------------------------------
+# define training model
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
+
 import functools
 import torch
 from torch.nn import init
 from human_body_prior.body_model.body_model import BodyModel
 import os
-
-
-"""
-# --------------------------------------------
-# define training model
-# --------------------------------------------
-"""
 
 
 def define_Model(opt):

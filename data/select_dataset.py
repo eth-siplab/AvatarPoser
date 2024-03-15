@@ -1,3 +1,13 @@
+'''
+# --------------------------------------------
+# define dataset
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
 def define_Dataset(dataset_opt):
     dataset_type = dataset_opt['dataset_type'].lower()
 

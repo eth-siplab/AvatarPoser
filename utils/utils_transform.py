@@ -1,3 +1,14 @@
+'''
+# --------------------------------------------
+# utility functions for 3D transformation
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
+
 import numpy as np
 from torch.nn import functional as F
 from human_body_prior.tools import tgm_conversion as tgm

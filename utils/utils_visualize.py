@@ -1,3 +1,14 @@
+'''
+# --------------------------------------------
+# visualization code 
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
+
 import torch
 import cv2
 import os
@@ -10,6 +21,7 @@ from body_visualizer.mesh.mesh_viewer import MeshViewer
 from body_visualizer.mesh.sphere import points_to_spheres
 import trimesh.util as util
 from psbody.mesh import Mesh
+
 
 os.environ['PYOPENGL_PLATFORM'] = 'egl'
 

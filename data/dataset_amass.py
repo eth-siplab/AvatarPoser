@@ -1,3 +1,14 @@
+'''
+# --------------------------------------------
+# dataloader for AMASS dataset
+# --------------------------------------------
+# AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing (ECCV 2022)
+# https://github.com/eth-siplab/AvatarPoser
+# Jiaxi Jiang (jiaxi.jiang@inf.ethz.ch)
+# Sensing, Interaction & Perception Lab,
+# Department of Computer Science, ETH Zurich
+'''
+
 import torch
 import numpy as np
 import os
@@ -7,16 +18,11 @@ from human_body_prior.body_model.body_model import BodyModel
 from human_body_prior.tools.omni_tools import copy2cpu as c2c
 from human_body_prior.tools.rotation_tools import aa2matrot,matrot2aa,local2global_pose
 import random
-from utils import utils_transform
-
-from scipy import signal
-
 import glob
 from IPython import embed
 import time
 import copy
 import pickle
-
 
 class AMASS_Dataset(Dataset):
     """Motion Capture dataset"""
