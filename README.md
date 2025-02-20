@@ -27,7 +27,7 @@ News
 
 :loudspeaker::loudspeaker: __2023-08:__ We release our follow-up work [EgoPoser](https://github.com/eth-siplab/EgoPoser) for egocentric inside-out body tracking on Arxiv. 
 
-:loudspeaker::loudspeaker: __2022-10:__ We present our real-time body tracking at [ECCV Demo](https://eccv2022.ecva.net/program/demo-list/) session.
+:loudspeaker::loudspeaker: __2022-10:__  __AvatarPoser__ was also honored as one of eleven [ECCV 2022 demonstrations](https://eccv2022.ecva.net/program/demo-list/). Videos are available on the [project page](https://siplab.org/projects/AvatarPoser).
 
 :fire::fire: __2022-07:__ __AvatarPoser__ is accepted by ECCV 2022, and our code is publicly available! We are the first method that can generate various full-body motions using only head and hand tracking signals. We now have ***full-body avatars*** in Metaverse! 
 
